@@ -19,7 +19,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
 
-      - name: Build and push Docker image
+      - name: build and push the docker image to docker hub
         run: |
           docker build -t majapan/bagstoreproject:latest .
           docker push majapan/bagstoreproject:latest
