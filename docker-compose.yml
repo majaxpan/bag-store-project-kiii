@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  web:
+    image: bagstoreproject:latest
+    container_name: bagstoreproject_container
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_ENGINE=django.db.backends.sqlite3
+      - DB_NAME=/app/db.sqlite3
