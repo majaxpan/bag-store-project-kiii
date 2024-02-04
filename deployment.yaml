@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bagstoreproject-app-deployment
+  name: bag-store-project-app-deployment
   namespace: kiii
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: bagstoreproject-app
@@ -14,10 +14,10 @@ spec:
         app: bagstoreproject-app
     spec:
       containers:
-      - name: web
+      - name: bag-store-project-container
         image: majapan/bagstoreproject:latest
         ports:
         - containerPort: 8000
         envFrom:
         - configMapRef:
-            name: bagstoreproject-app-config
+            name: bag-store-project-app-config
